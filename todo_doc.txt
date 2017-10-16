@@ -1,8 +1,8 @@
 TODO List - Workshop 3: Black Jack Game
 
-• Understand the design and implementation of the project
-• Implement Game::Stand (See sequence diagram) the program should be playable after this
-• Controller and View got hidden dependencies (new game, hit, stand) Remove this!
+- Understand the design and implementation of the project
+- Implement Game::Stand (See sequence diagram) the program should be playable after this
+- Controller and View got hidden dependencies (new game, hit, stand) Remove this!
 • Implement the rule "Soft 17" (see wikipedia) use the same design pattern already used
 • Design and implement variable rules for who wins the game. The design should allow other variations to be added
 • Remove duplicate code (getting a card from the deck)

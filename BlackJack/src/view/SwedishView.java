@@ -1,6 +1,9 @@
 package view;
 
 public class SwedishView implements IView {
+
+    private int m_input;
+
     public void DisplayWelcomeMessage() {
 
         for (int i = 0; i < 50; i++) {
@@ -10,20 +13,7 @@ public class SwedishView implements IView {
 
         System.out.println("Hej Black Jack Världen");
         System.out.println("----------------------");
-        System.out.println("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta\n");
-    }
-
-    public int GetInput() {
-        try {
-            int c = System.in.read();
-            while (c == '\r' || c == '\n') {
-                c = System.in.read();
-            }
-            return c;
-        } catch (java.io.IOException e) {
-            System.out.println("" + e);
-            return 0;
-        }
+        System.out.println("Skriv 's' för att Spela, 'g' för kort giv, 'n' om du är nöjd eller 'a' för att avsluta\n");
     }
 
     public void DisplayCard(model.Card a_card) {
@@ -63,4 +53,39 @@ public class SwedishView implements IView {
         System.out.println("Poäng: " + a_score);
         System.out.println("");
     }
+
+    @Override
+    public boolean WantsToPlay() {
+        return m_input == (int)'s';
+    }
+
+    @Override
+    public boolean WantsToHit() {
+        return m_input == (int)'g';
+    }
+
+    @Override
+    public boolean WantsToStand() {
+        return m_input == (int)'n';
+    }
+
+    @Override
+    public boolean WantsToQuit() {
+        return m_input == (int)'a';
+    }
+
+
+    public void ReadInput() {
+        try {
+            int i = System.in.read();
+            while (i == '\r' || i == '\n') {
+                i = System.in.read();
+            }
+            m_input = i;
+        } catch (java.io.IOException e) {
+            System.out.println("Wrong input please try again!");
+            m_input = 0;
+        }
+    }
 }
+
