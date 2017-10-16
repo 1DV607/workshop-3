@@ -1,4 +1,4 @@
-package BlackJack.model;
+package model;
 
 public class Card {
 
