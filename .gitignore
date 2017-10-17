@@ -31,28 +31,28 @@ build/
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/dictionaries
+BlackJack/.idea/**/workspace.xml
+BlackJack/.idea/**/tasks.xml
+BlackJack/.idea/dictionaries
 
 # Sensitive or high-churn files:
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.xml
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
+BlackJack/.idea/**/dataSources/
+BlackJack/.idea/**/dataSources.ids
+BlackJack/.idea/**/dataSources.xml
+BlackJack/.idea/**/dataSources.local.xml
+BlackJack/.idea/**/sqlDataSources.xml
+BlackJack/.idea/**/dynamic.xml
+BlackJack/.idea/**/uiDesigner.xml
 
 # Gradle:
-.idea/**/gradle.xml
-.idea/**/libraries
+BlackJack/.idea/**/gradle.xml
+BlackJack/.idea/**/libraries
 
 # CMake
 cmake-build-debug/
 
 # Mongo Explorer plugin:
-.idea/**/mongoSettings.xml
+BlackJack/.idea/**/mongoSettings.xml
 
 ## File-based project format:
 *.iws
@@ -63,13 +63,13 @@ cmake-build-debug/
 /out/
 
 # mpeltonen/sbt-idea plugin
-.idea_modules/
+BlackJack/.idea_modules/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
 
 # Cursive Clojure plugin
-.idea/replstate.xml
+BlackJack/.idea/replstate.xml
 
 # Ruby plugin and RubyMine
 /.rakeTasks
@@ -89,4 +89,4 @@ fabric.properties
 # *.ipr
 
 # Sonarlint plugin
-.idea/sonarlint
+BlackJack/.idea/sonarlint
