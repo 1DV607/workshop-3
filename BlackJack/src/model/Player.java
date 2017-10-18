@@ -60,4 +60,8 @@ public class Player {
 
         return score;
     }
+
+    public int GetMaxScore() {
+        return g_maxScore;
+    }
 }
