@@ -8,7 +8,6 @@ import model.Player;
  */
 public class InFavorOfDealer implements IGameWinnerRule {
 
-
     @Override
     public boolean IsWinner(Player a_dealer, Player a_player) {
 

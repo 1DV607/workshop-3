@@ -1,5 +1,9 @@
 package view;
 
+/**
+ *  Standard, english command line/terminal view. Handles specifics on how things are displayed
+ *  to the player and reads input from the player.
+ */
 public class SimpleView implements IView {
 
     private int m_input;
@@ -8,7 +12,7 @@ public class SimpleView implements IView {
         for (int i = 0; i < 50; i++) {
             System.out.print("\n");
         }
-        ;
+        
         System.out.println("Hello Black Jack World");
         System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
     }

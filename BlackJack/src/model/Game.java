@@ -1,5 +1,8 @@
 package model;
 
+/**
+ *  Model class. Provides an interface for the controller to manage and monitor the game state.
+ */
 public class Game {
 
     private Dealer m_dealer;
@@ -46,6 +49,5 @@ public class Game {
     public int GetPlayerScore() {
         return m_player.CalcScore();
     }
-
 
 }

@@ -1,5 +1,9 @@
 package view;
 
+/**
+ *  Swedish command line/terminal view. Handles specifics on how things are displayed to the
+ *  player and reads input from the player.
+ */
 public class SwedishView implements IView {
 
     private int m_input;

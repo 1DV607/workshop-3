@@ -3,6 +3,10 @@ package controller;
 import view.IView;
 import model.Game;
 
+/**
+ *  Controller class. Controls the flow of the program depending on user input
+ *  and game state.
+ */
 public class PlayGame {
 
     public boolean Play(Game a_game, IView a_view) {

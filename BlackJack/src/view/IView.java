@@ -1,5 +1,9 @@
 package view;
 
+/**
+ *  View interface which all available views implements. Provides methods the controller can use
+ *  to control the views.
+ */
 public interface IView {
     void DisplayWelcomeMessage();
 
