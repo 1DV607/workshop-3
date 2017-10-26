@@ -24,9 +24,7 @@ public class PlayGame implements CardDealtObserver {
         m_game.SetObserver(this);
 
         m_view.DisplayWelcomeMessage();
-
-        m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
-        m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
+        DisplayPlayerHands();
 
         if (m_game.IsGameOver()) {
             m_view.DisplayGameOver(m_game.IsDealerWinner());
@@ -51,13 +49,17 @@ public class PlayGame implements CardDealtObserver {
     @Override
     public void CardDealt() {
         m_view.Clear();
-        m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
-        m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
+        DisplayPlayerHands();
 
         try {
             Thread.sleep(3000);
         } catch (InterruptedException ex) {
             System.err.println("Sleep interrupted.");
         }
+    }
+
+    private void DisplayPlayerHands() {
+        m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
+        m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
     }
 }
