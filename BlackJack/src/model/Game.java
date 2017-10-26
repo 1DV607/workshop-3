@@ -1,5 +1,7 @@
 package model;
 
+import observer.CardDealtObserver;
+
 /**
  *  Model class. Provides an interface for the controller to manage and monitor the game state.
  */
@@ -13,6 +15,9 @@ public class Game {
         m_player = new Player();
     }
 
+    public void SetObserver(CardDealtObserver a_observer) {
+        m_dealer.SetObserver(a_observer);
+    }
 
     public boolean IsGameOver() {
         return m_dealer.IsGameOver();

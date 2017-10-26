@@ -49,6 +49,13 @@ public class SimpleView implements IView {
     }
 
     @Override
+    public void Clear() {
+        for (int i = 0; i < 50; i++) {
+            System.out.print("\n");
+        }
+    }
+
+    @Override
     public boolean WantsToPlay() {
         return m_input == (int)'p';
     }

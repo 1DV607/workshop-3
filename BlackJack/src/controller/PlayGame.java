@@ -1,39 +1,63 @@
 package controller;
 
+import java.util.concurrent.TimeUnit;
+
 import view.IView;
 import model.Game;
+import observer.CardDealtObserver;
 
 /**
  *  Controller class. Controls the flow of the program depending on user input
  *  and game state.
  */
-public class PlayGame {
+public class PlayGame implements CardDealtObserver {
 
-    public boolean Play(Game a_game, IView a_view) {
-        a_view.DisplayWelcomeMessage();
+    private Game m_game;
+    private IView m_view;
 
-        a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-        a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+    public PlayGame(Game a_game, IView a_view) {
+        m_game = a_game;
+        m_view = a_view;
+    }
 
-        if (a_game.IsGameOver()) {
-            a_view.DisplayGameOver(a_game.IsDealerWinner());
+    public boolean Play() {
+        m_game.SetObserver(this);
+
+        m_view.DisplayWelcomeMessage();
+
+        m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
+        m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
+
+        if (m_game.IsGameOver()) {
+            m_view.DisplayGameOver(m_game.IsDealerWinner());
         }
 
-        a_view.ReadInput();
+        m_view.ReadInput();
 
-        if (a_view.WantsToPlay()) {
-            a_game.NewGame();
-        } else if (a_view.WantsToHit()) {
-            a_game.Hit();
-        } else if (a_view.WantsToStand()) {
-            a_game.Stand();
+        if (m_view.WantsToPlay()) {
+            m_game.NewGame();
+        } else if (m_view.WantsToHit()) {
+            m_game.Hit();
+        } else if (m_view.WantsToStand()) {
+            m_game.Stand();
         }
-        else if (a_view.WantsToQuit()) {
+        else if (m_view.WantsToQuit()) {
             return false;
         }
 
         return true;
     }
 
+    @Override
+    public void CardDealt() {
+        m_view.Clear();
+        m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
+        m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
 
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            System.err.println("Sleep interrupted.");
+        }
+    }
 }

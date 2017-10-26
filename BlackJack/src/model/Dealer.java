@@ -1,6 +1,7 @@
 package model;
 
 import model.rules.*;
+import observer.CardDealtObserver;
 
 public class Dealer extends Player {
 
@@ -8,6 +9,7 @@ public class Dealer extends Player {
     private INewGameStrategy m_newGameRule;
     private IHitStrategy m_hitRule;
     private IGameWinnerRule m_winRule;
+    private CardDealtObserver m_observer;
 
     public Dealer(RulesFactory a_rulesFactory) {
 
@@ -69,6 +71,11 @@ public class Dealer extends Player {
         Card card = a_deck.GetCard();
         card.Show(a_cardVisible);
         a_player.DealCard(card);
+        m_observer.CardDealt();
+    }
+
+    public void SetObserver(CardDealtObserver a_observer) {
+        m_observer = a_observer;
     }
 
 }

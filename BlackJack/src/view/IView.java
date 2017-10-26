@@ -15,6 +15,8 @@ public interface IView {
 
     void DisplayGameOver(boolean a_dealerIsWinner);
 
+    void Clear();
+
     boolean WantsToPlay();
 
     boolean WantsToHit();
